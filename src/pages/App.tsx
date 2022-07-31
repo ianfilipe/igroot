@@ -1,5 +1,11 @@
+import Feed from "./Feed";
+
 function App() {
-  return <div className="App">Hello World!</div>;
+  return (
+    <>
+      <Feed />
+    </>
+  );
 }
 
 export default App;
