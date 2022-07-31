@@ -4,6 +4,7 @@ import {
   RiImageLine,
   RiUser3Line,
 } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import Button from "../Button";
 import { StyledHeader } from "./styles";
 
@@ -11,16 +12,20 @@ export default function Header() {
   return (
     <StyledHeader>
       <div>
-        <h1>
-          <RiImageLine size={20} />
-          igroot
-        </h1>
+        <Link to="/">
+          <h1>
+            <RiImageLine size={20} />
+            igroot
+          </h1>
+        </Link>
         <ul>
           <li>
-            <Button>
-              <RiHomeLine size={20} />
-              Página Inicial
-            </Button>
+            <Link to="/">
+              <Button>
+                <RiHomeLine size={20} />
+                Página Inicial
+              </Button>
+            </Link>
           </li>
           <li>
             <Button disabled>
@@ -35,15 +40,19 @@ export default function Header() {
             </Button>
           </li>
           <li>
-            <Button rainbow fullWidth>
-              Upload
-            </Button>
+            <Link to="/upload">
+              <Button rainbow fullWidth>
+                Upload
+              </Button>
+            </Link>
           </li>
         </ul>
       </div>
       <ul>
         <li>
-          <Button fullWidth>Crie uma conta</Button>
+          <Link to="/signup">
+            <Button fullWidth>Crie uma conta</Button>
+          </Link>
         </li>
       </ul>
     </StyledHeader>
