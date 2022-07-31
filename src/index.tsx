@@ -1,28 +1,18 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { createGlobalStyle } from "styled-components";
-import { COLORS } from "./constants";
+import Header from "./components/Header";
 import AppRouter from "./routes";
+import { GlobalStyle, Wrapper } from "./styles/global";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 
-const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body { 
-    font-family: 'Inter', sans-serif;
-    background: ${COLORS.black1};
-  }
-`;
-
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <AppRouter />
+    <Wrapper>
+      <Header />
+      <AppRouter />
+    </Wrapper>
   </React.StrictMode>
 );

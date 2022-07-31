@@ -1,14 +1,9 @@
 import { useState } from "react";
 import { RiAtLine, RiHashtag, RiVideoUploadLine } from "react-icons/ri";
-import { COLORS } from "../../constants";
-import {
-  Button,
-  ButtonGroup,
-  Container,
-  Input,
-  UploadAImage,
-  Wrapper,
-} from "./style";
+import Button from "../../components/Button";
+import { Container } from "../../styles/global";
+import { dark as theme } from "../../styles/themes";
+import { ButtonGroup, Input, UploadAImage, Wrapper } from "./styles";
 
 export default function Upload() {
   const [hidden, setHidden] = useState(true);
@@ -22,7 +17,7 @@ export default function Upload() {
     <Container>
       <Wrapper>
         <UploadAImage>
-          <RiVideoUploadLine size={48} color={COLORS.white} />
+          <RiVideoUploadLine size={48} color={theme.colors.white} />
           <p>Selecione o arquivo de imagem</p>
           <p>ou arraste e solte aqui</p>
         </UploadAImage>
